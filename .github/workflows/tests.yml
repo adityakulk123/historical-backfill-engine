@@ -2,9 +2,11 @@ name: Historical Backfill Engine Tests
 
 on:
 push:
-branches: [main]
+branches:
+- main
 pull_request:
-branches: [main]
+branches:
+- main
 workflow_dispatch:
 
 permissions:
@@ -13,11 +15,10 @@ contents: read
 jobs:
 test:
 runs-on: ubuntu-latest
-
-
 steps:
-  - name: Check out repository
-    uses: actions/checkout@v4
+- name: Check out repository
+uses: actions/checkout@v4
+
 
   - name: Set up Python
     uses: actions/setup-python@v5
